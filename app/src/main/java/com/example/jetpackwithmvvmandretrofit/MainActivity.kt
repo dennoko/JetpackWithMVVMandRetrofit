@@ -1,6 +1,7 @@
 package com.example.jetpackwithmvvmandretrofit
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -17,6 +18,7 @@ class MainActivity : ComponentActivity() {
     private val viewModel: CreditCardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.d("hoge", "onCreate")
         super.onCreate(savedInstanceState)
         setContent {
             JetpackWithMVVMandRetrofitTheme {
@@ -25,6 +27,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
+                    Log.d("hoge", "setContent")
                     CreditCardsScreen(viewModel)
                 }
             }

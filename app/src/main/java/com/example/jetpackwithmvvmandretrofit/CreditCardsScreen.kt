@@ -1,5 +1,6 @@
 package com.example.jetpackwithmvvmandretrofit
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -15,6 +16,7 @@ fun CreditCardsScreen(viewModel: CreditCardViewModel) {
     val creditCards by viewModel.creditCards.observeAsState(emptyList())
 
     LaunchedEffect(Unit) {
+        Log.d("hoge", "LaunchedEffect")
         viewModel.fetchCreditCards()
     }
 
@@ -26,6 +28,7 @@ fun CreditCardsScreen(viewModel: CreditCardViewModel) {
             // Display the list of credit cards
             LazyColumn {
                 items(creditCards) { creditCard ->
+                    Log.d("hoge", "LazyColumn")
                     Text(text = creditCard.bank)
                     Text(text = creditCard.number)
                     Text(text = creditCard.type)

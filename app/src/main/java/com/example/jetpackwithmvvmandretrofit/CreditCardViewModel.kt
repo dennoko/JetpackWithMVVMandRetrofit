@@ -1,5 +1,6 @@
 package com.example.jetpackwithmvvmandretrofit
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -19,6 +20,7 @@ class CreditCardViewModel: ViewModel() {
                 _creditCards.value = cards
             } catch (e: Exception) {
                 _creditCards.value = emptyList()
+                Log.d("hoge", "happen error by ${e.message}")
             }
         }
     }
