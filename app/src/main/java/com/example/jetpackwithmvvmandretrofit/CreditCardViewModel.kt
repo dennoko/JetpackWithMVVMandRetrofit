@@ -19,7 +19,7 @@ class CreditCardViewModel: ViewModel() {
                 val cards = repository.getCreditCards()
                 _creditCards.value = cards
             } catch (e: Exception) {
-                _creditCards.value = emptyList()
+                _creditCards.value = listOf()
                 Log.d("hoge", "happen error by ${e.message}")
             }
         }

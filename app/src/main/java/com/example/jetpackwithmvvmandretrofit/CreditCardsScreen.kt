@@ -13,7 +13,7 @@ import androidx.compose.runtime.livedata.observeAsState
 
 @Composable
 fun CreditCardsScreen(viewModel: CreditCardViewModel) {
-    val creditCards by viewModel.creditCards.observeAsState(emptyList())
+    val creditCards by viewModel.creditCards.observeAsState(listOf())
 
     LaunchedEffect(Unit) {
         Log.d("hoge", "LaunchedEffect")
@@ -29,9 +29,7 @@ fun CreditCardsScreen(viewModel: CreditCardViewModel) {
             LazyColumn {
                 items(creditCards) { creditCard ->
                     Log.d("hoge", "LazyColumn")
-                    Text(text = creditCard.bank)
-                    Text(text = creditCard.number)
-                    Text(text = creditCard.type)
+                    Text(text = creditCard.id)
                     Divider()
                 }
             }
