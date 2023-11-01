@@ -30,10 +30,12 @@ fun CreditCardsScreen(viewModel: CreditCardViewModel) {
             LazyColumn {
                 items(creditCards) { creditCard ->
                     Log.d("hoge", "LazyColumn")
-                    Text(text = creditCard.id)
+                    if(creditCard.id.toInt() < 424930){
+                        Text(text = creditCard.id)
 
-                    AsyncImage(model = creditCard.img_src, contentDescription = null)
-                    Divider()
+                        AsyncImage(model = creditCard.img_src, contentDescription = null)
+                        Divider()
+                    }
                 }
             }
         }
