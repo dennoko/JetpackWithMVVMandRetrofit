@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.livedata.observeAsState
+import coil.compose.AsyncImage
 
 @Composable
 fun CreditCardsScreen(viewModel: CreditCardViewModel) {
@@ -30,6 +31,8 @@ fun CreditCardsScreen(viewModel: CreditCardViewModel) {
                 items(creditCards) { creditCard ->
                     Log.d("hoge", "LazyColumn")
                     Text(text = creditCard.id)
+
+                    AsyncImage(model = creditCard.img_src, contentDescription = null)
                     Divider()
                 }
             }
